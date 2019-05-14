@@ -15,13 +15,13 @@ import java.sql.SQLException;
 class DbConnector {
     private static final Logger log = LoggerFactory.getLogger(DbConnector.class);
 
-    private static final String URL_TEMPLATE = "jdbc:postgresql://%s:%d/%s";
-    private static final String URL;
-    private static final String HOST = "localhost";
+    private static final String URL_TEMPLATE = "postgresql://%s:%d/%s";
+    private static final String URL ="jdbc:postgresql://ec2-54-195-252-243.eu-west-1.compute.amazonaws.com:5432/dbq1gtnst1km6m";
+    private static final String HOST = "ec2-54-195-252-243.eu-west-1.compute.amazonaws.com";
     private static final int PORT = 5432;
-    private static final String DB_NAME = "task";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "110599";
+    private static final String DB_NAME = "dbq1gtnst1km6m";
+    private static final String USER = "ehvuvonbuftrxc";
+    private static final String PASSWORD = "f6b5a4c4530f1dc13313468672aa1fdea3bd9c063a41d89d38d9f4b428d97515";
 
     static {
         try {
@@ -31,7 +31,7 @@ class DbConnector {
             System.exit(-1);
         }
 
-        URL = String.format(URL_TEMPLATE, HOST, PORT, DB_NAME);
+
         log.info("Success. DbConnector init.");
     }
 
